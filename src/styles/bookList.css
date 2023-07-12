@@ -1,0 +1,43 @@
+.bookList-container {
+  padding: 20px 40px;
+}
+
+.bookList-container li {
+  list-style: none;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding: 20px 20px;
+}
+
+.book-category {
+  color: #717171;
+  font-weight: 600;
+}
+
+.book-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.book-author,
+.book-container-buttons button {
+  font-size: 14px;
+  color: rgb(103, 157, 204);
+}
+
+.book-container-buttons button {
+  border: none;
+  background-color: transparent;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.book-container-buttons button:last-child {
+  border: none;
+}
+
+.book-container-buttons button:nth-child(2),
+.book-container-buttons button:last-child {
+  padding-left: 20px;
+}
