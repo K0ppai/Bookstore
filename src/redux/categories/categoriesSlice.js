@@ -18,4 +18,5 @@ const categorySlice = createSlice({
   },
 });
 
+export const { displayStatus } = categorySlice.actions;
 export default categorySlice.reducer;
