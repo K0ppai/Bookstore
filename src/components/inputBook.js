@@ -2,12 +2,11 @@ import '../styles/inputBook.css';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { v4 as id } from 'uuid';
-import { addBook } from '../redux/books/booksSlice';
+import { addBooks } from '../redux/books/booksSlice';
 
 function InputBook() {
   const dispatch = useDispatch();
   const defaultBook = {
-    item_id: '',
     title: '',
     author: '',
     category: '',
@@ -17,7 +16,7 @@ function InputBook() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!newBook.title || !newBook.author || !newBook.category) return;
-    dispatch(addBook({ ...newBook, item_id: id() }));
+    dispatch(addBooks({ ...newBook, item_id: id() }));
     e.target.reset();
     setNewBook(defaultBook);
   };
@@ -30,18 +29,9 @@ function InputBook() {
     <div className="input-container">
       <h1>ADD NEW BOOK</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          placeholder="Book title"
-          onChange={(e) => changeDefaultBook('title', e)}
-        />
-        <input
-          placeholder="Author"
-          onChange={(e) => changeDefaultBook('author', e)}
-        />
-        <select
-          defaultValue="Category"
-          onChange={(e) => changeDefaultBook('category', e)}
-        >
+        <input placeholder="Book title" onChange={(e) => changeDefaultBook('title', e)} />
+        <input placeholder="Author" onChange={(e) => changeDefaultBook('author', e)} />
+        <select defaultValue="Category" onChange={(e) => changeDefaultBook('category', e)}>
           <option disabled>Category</option>
           <option value="Action">Action</option>
           <option value="Drama">Drama</option>
