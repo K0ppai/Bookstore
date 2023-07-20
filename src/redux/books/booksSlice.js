@@ -40,12 +40,7 @@ export const removeBooks = createAsyncThunk('books/removeBooks', async (bookId) 
 const bookSlice = createSlice({
   name: 'book',
   initialState,
-  reducers: {
-    removeBook: (state, action) => {
-      const bookId = action.payload;
-      state.books = state.books.filter((book) => book.item_id !== bookId);
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(addBooks.fulfilled, (state, action) => {
       const newBook = action.payload;
