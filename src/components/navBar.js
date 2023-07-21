@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import '../styles/navBar.css';
+import { ImUser } from 'react-icons/im';
 
 function NavBar() {
   return (
@@ -16,7 +17,7 @@ function NavBar() {
         </ul>
       </div>
       <div>
-        <i className="fa-solid fa-user" />
+        <ImUser className="userIcon" />
       </div>
     </nav>
   );
